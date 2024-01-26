@@ -1,0 +1,138 @@
+*,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.auth-container{
+    background-color: rgba(255,255,255,0.13);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    box-shadow: -1px 4px 40px rgba(8,7,16,0.6);
+    padding: 0px 0px;
+}
+
+#auth-nav .active {
+    background-color: #ffffff !important;
+    border-radius: 0;
+    font-weight: bold;
+    box-shadow: unset !important;
+}
+
+#auth-nav .login{
+    padding: 20px 0px;
+    font-style: normal;
+    text-align: center;
+    background-color: #DFE0DF;
+    border-radius: 10px 0 10px 0;
+    box-shadow: inset -5px -5px 10px rgba(0, 0, 0,25%);
+}
+
+#auth-nav .signup{
+    padding: 20px 0px;
+    text-align: center;
+    background-color: #DFE0DF;
+    border-radius: 0 10px 0 10px;
+    box-shadow: inset 5px -5px 10px rgba(0, 0, 0,25%);
+}
+
+form{
+    background-color: rgba(255,255,255,0.13);
+    border-radius: 10px;
+    padding: 40px;
+}
+form *{
+    color: #000000;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+
+.coolinput {
+    display: flex;
+    flex-direction: column;
+    position: static;
+    width: 380px;
+}
+
+.coolinput label.text {
+    color: #BDBDBD;
+    position: relative;
+    top: 0.7rem;
+    margin: 0 0 0 15px;
+    padding: 0 5px;
+    background: #ffffff;
+    width: fit-content;
+}
+
+.coolinput input[type=text].input {
+    color: #BDBDBD;
+    padding: 15px 15px;
+    border: 1px #BDBDBD solid;
+    border-radius: 8px;
+}
+
+.coolinput input[type=text]:focus{
+    border: 1px #000000 solid;
+    color: #000000;
+}
+
+/* label{
+    display: block;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 500;
+}
+input{
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+} */
+/* ::placeholder{
+    color: #e5e5e5;
+} */
+button{
+    margin-top: 15px;
+    width: 100%;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+}
+/* .social{
+  margin-top: 30px;
+  display: flex;
+}
+.social div{
+  background: red;
+  width: 150px;
+  border-radius: 3px;
+  padding: 5px 10px 10px 5px;
+  background-color: rgba(255,255,255,0.27);
+  color: #eaf0fb;
+  text-align: center;
+}
+.social div:hover{
+  background-color: rgba(255,255,255,0.47);
+}
+.social .fb{
+  margin-left: 25px;
+}
+.social i{
+  margin-right: 4px;
+} */
