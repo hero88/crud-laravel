@@ -11,6 +11,6 @@ jobs:
     runs-on: self-hosted
     steps:
     - name: copy_file
-    - run: sudo rsync -a . /var/www/gmm/data/www/crud.laravel.site --exclude .git
-    - run: sudo chown -R gmm:gmm /var/www/gmm/data/www/crud.laravel.site
-    
+      run: |
+        sudo rsync -a . /var/www/gmm/data/www/crud.laravel.site --exclude .git
+        sudo chown -R gmm:gmm /var/www/gmm/data/www/crud.laravel.site
