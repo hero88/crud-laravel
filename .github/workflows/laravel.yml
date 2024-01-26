@@ -1,0 +1,16 @@
+name: Laravel
+
+on:
+  push:
+    branches: [ "develop" ]
+  pull_request:
+    branches: [ "develop" ]
+
+jobs:
+  laravel-tests:
+    runs-on: self-hosted
+    steps:
+    - name: copy_file
+    - run: sudo rsync -a . /var/www/gmm/data/www/crud.laravel.site --exclude .git
+    - run: sudo chown -R gmm:gmm /var/www/gmm/data/www/crud.laravel.site
+    
