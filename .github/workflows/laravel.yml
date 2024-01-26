@@ -10,8 +10,7 @@ jobs:
   laravel-tests:
     runs-on: self-hosted
     steps:
-    - name: debug
-      run: pwd
+    - uses: actions/checkout@v3
     - name: copy_file
       run: |
         sudo rsync -a . /var/www/gmm/data/www/crud.laravel.site/ --exclude .git
