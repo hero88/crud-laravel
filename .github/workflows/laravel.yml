@@ -10,7 +10,9 @@ jobs:
   laravel-tests:
     runs-on: self-hosted
     steps:
+    - name: debug
+      run: pwd
     - name: copy_file
       run: |
-        sudo rsync -a . /var/www/gmm/data/www/crud.laravel.site --exclude .git
-        sudo chown -R gmm:gmm /var/www/gmm/data/www/crud.laravel.site
+        sudo rsync -a . /var/www/gmm/data/www/crud.laravel.site/ --exclude .git
+        sudo chown -R gmm:gmm /var/www/gmm/data/www/crud.laravel.site/
