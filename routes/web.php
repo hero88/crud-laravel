@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\AuthController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,16 +16,33 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [DashboardController::class, 'index']);
+
+Route::get('/home', [DashboardController::class, 'index']);
+Route::get('/home/1', function () {
+    return redirect('/home');
+});
+Route::get('/home/{i}', [DashboardController::class, 'index']);
+
+Route::get('/login', function () {
+    $values = [
+        'pageTitle' => 'Login',
+        'action' => 'login'
+    ];
+    return view('auth/auth', $values);
 });
 
-Route::get('about', function () {
-    // $about = 'This is about page';
-    // $about2 = 'This is about page 2';
-    //return view('about', compact('about', 'about2'));
-    return view('about');
-})->name('about');
+Route::post('/loginok', [AuthController::class, 'login']);
+
+Route::get('/signup', function () {
+    $values = [
+        'pageTitle' => 'Sign up',
+        'action' => 'signup'
+    ];
+    return view('auth/auth', $values);
+});
+
+Route::post('/signupok', [AuthController::class, 'signup']);
 
 Route::get('contact', function () {
     return "<h1>Contact Page</h1>";
@@ -32,27 +52,6 @@ Route::get('users/{id}', function ($id) {
     return "This is user $id";
 })->name('edit-user');
 
-Route::get('home', function () {
-    $blogs = [
-        [
-            'title' => 'Blog 1',
-            'content' => 'This is blog 1 content',
-        ],
-        [
-            'title' => 'Blog 2',
-            'content' => 'This is blog 2 content',
-        ],
-        [
-            'title' => 'Blog 3',
-            'content' => 'This is blog 3 content',
-        ],
-        [
-            'title' => 'Blog 4',
-            'content' => 'This is blog 4 content',
-        ]
-    ];
-    return view('home', compact('blogs'));
-});
 
 Route::get('homes', function () {
     return "<a href='".route('edit-user','tin')."'>About</a>";
