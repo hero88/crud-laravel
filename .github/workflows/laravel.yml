@@ -15,5 +15,5 @@ jobs:
         ref: ${{ github.event.before }}  # Use the commit before the push
     - name: copy_file
       run: |
-        sudo rsync -a . /var/www/gmm/data/www/crud.laravel.site/ --exclude .git
-        sudo chown -R gmm:gmm /var/www/gmm/data/www/crud.laravel.site/
+        sudo rsync -a . /var/www/gmm/data/www/crud.upnewskill.asia/ --exclude .git
+        sudo chown -R gmm:gmm /var/www/gmm/data/www/crud.upnewskill.asia/
